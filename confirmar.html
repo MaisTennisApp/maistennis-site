@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmar Email - +Tennis</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034964253/JPenbLIrXayavxbE.svg" type="image/svg+xml">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #6D4AFF 0%, #8B5CF6 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 24px;
+      padding: 3rem 2rem;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    .logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 2rem;
+    }
+
+    .status-icon {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #6D4AFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #5838CC;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(109, 74, 255, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #6D4AFF;
+      border: 2px solid #6D4AFF;
+      margin-top: 1rem;
+    }
+
+    .btn-secondary:hover {
+      background: #6D4AFF;
+      color: white;
+    }
+
+    .loader {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #6D4AFF;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 2rem auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 2rem 1.5rem;
+      }
+
+      .logo {
+        width: 150px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .status-icon {
+        font-size: 4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663034964253/JPenbLIrXayavxbE.svg" alt="+Tennis" class="logo">
+    
+    <!-- LOADING STATE -->
+    <div id="loading-state">
+      <div class="loader"></div>
+      <h1>Confirmando seu email...</h1>
+      <p>Aguarde um momento enquanto validamos sua conta.</p>
+    </div>
+
+    <!-- SUCCESS STATE -->
+    <div id="success-state" class="hidden">
+      <div class="status-icon">✅</div>
+      <h1>Email Confirmado!</h1>
+      <p>Sua conta foi ativada com sucesso. Agora você pode aproveitar todos os recursos do +Tennis!</p>
+      <button class="btn" onclick="openApp()">Abrir +Tennis App</button>
+      <a href="/" class="btn btn-secondary">Voltar para o site</a>
+    </div>
+
+    <!-- ERROR STATE -->
+    <div id="error-state" class="hidden">
+      <div class="status-icon">❌</div>
+      <h1>Erro na Confirmação</h1>
+      <p id="error-message">Token inválido ou expirado. Por favor, solicite um novo email de confirmação.</p>
+      <a href="/" class="btn">Voltar para o site</a>
+    </div>
+  </div>
+
+  <script>
+    // Pegar token da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+
+    // Estados
+    const loadingState = document.getElementById('loading-state');
+    const successState = document.getElementById('success-state');
+    const errorState = document.getElementById('error-state');
+    const errorMessage = document.getElementById('error-message');
+
+    // Função para abrir o app
+    function openApp() {
+      // Tentar abrir o app via deep link
+      window.location.href = 'easytennis://home';
+      
+      // Fallback: mostrar instruções após 2 segundos
+      setTimeout(() => {
+        alert('Se o app não abriu automaticamente, abra-o manualmente no seu dispositivo.');
+      }, 2000);
+    }
+
+    // Validar token
+    async function validateToken() {
+      if (!token) {
+        showError('Token não fornecido. Verifique o link no email.');
+        return;
+      }
+
+      try {
+        // Chamar API de validação
+        const response = await fetch(`/api/confirm-token?token=${encodeURIComponent(token)}`);
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          showSuccess();
+        } else {
+          showError(data.message || 'Erro ao confirmar email. Tente novamente.');
+        }
+      } catch (error) {
+        console.error('Erro:', error);
+        showError('Erro de conexão. Verifique sua internet e tente novamente.');
+      }
+    }
+
+    function showSuccess() {
+      loadingState.classList.add('hidden');
+      successState.classList.remove('hidden');
+    }
+
+    function showError(message) {
+      loadingState.classList.add('hidden');
+      errorMessage.textContent = message;
+      errorState.classList.remove('hidden');
+    }
+
+    // Iniciar validação
+    validateToken();
+  </script>
+</body>
+</html>
