@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /confirmar
+Disallow: /api/
+
+Sitemap: https://www.maistennis.com.br/sitemap.xml
