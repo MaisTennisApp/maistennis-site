@@ -73,7 +73,8 @@ img { max-width: 100%; }
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 10px 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .logo {
@@ -92,6 +93,18 @@ img { max-width: 100%; }
   max-width: none;
   height: 74px;
   margin: -14px 0 0 -14px;
+}
+
+/* Logo completa (bola + "+Tennis") */
+.brand {
+  display: block;
+  flex: none;
+}
+
+.brand img {
+  display: block;
+  height: 54px;
+  width: auto;
 }
 
 .site-nav {
@@ -140,6 +153,8 @@ img { max-width: 100%; }
   gap: 32px;
   margin-bottom: 36px;
 }
+
+.footer-brand .brand img { height: 72px; }
 
 .footer-brand p {
   margin: 14px 0 0;
@@ -413,6 +428,7 @@ img { max-width: 100%; }
 }
 
 @media (max-width: 560px) {
+  .brand img { height: 46px; }
   .container,
   .legal { padding-left: 18px; padding-right: 18px; }
   .legal .data-table th,

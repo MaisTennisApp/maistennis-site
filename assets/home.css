@@ -92,10 +92,10 @@
 .hero-note a { color: var(--purple); font-weight: 600; text-decoration: none; }
 .hero-note a:hover { text-decoration: underline; }
 
-/* ---------- Celulares (ilustração do app) ---------- */
+/* ---------- Celulares (telas reais do app) ---------- */
 .phones {
   position: relative;
-  height: 520px;
+  height: 590px;
   display: flex;
   justify-content: center;
 }
@@ -105,84 +105,42 @@
   width: 252px;
   border-radius: 38px;
   border: 9px solid var(--ink);
-  background: var(--card);
+  background: var(--ink);
   box-shadow: 0 34px 60px -24px rgba(60, 30, 160, 0.4);
   overflow: hidden;
 }
 
+.phone img { display: block; width: 100%; height: auto; }
+
 .phone.back { left: 50%; top: 0; transform: translateX(-104%) rotate(-5deg); }
 .phone.front { left: 50%; top: 44px; transform: translateX(4%) rotate(3deg); }
 
-.phone-screen { padding: 16px 14px 18px; background: #F7F5FD; min-height: 440px; }
-
-.ph-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-.ph-title { font-size: 12px; font-weight: 700; color: var(--ink-2); }
-.ph-dot { width: 20px; height: 20px; border-radius: 50%; background: rgba(109, 74, 255, 0.14); }
-
-.ph-card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 12px;
-  margin-bottom: 10px;
-  box-shadow: 0 8px 18px -14px rgba(0, 0, 0, 0.3);
+/* ---------- Por dentro do app ---------- */
+.shots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
 }
 
-.ph-profile { display: flex; align-items: center; gap: 10px; }
+.shot { margin: 0; text-align: center; }
 
-.ph-avatar {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #E3DBFF;
-  border: 2px solid var(--purple);
-  flex: none;
+.shot .phone {
+  position: relative;
+  width: 100%;
+  max-width: 232px;
+  margin: 0 auto 18px;
+  border-width: 8px;
+  border-radius: 34px;
+  box-shadow: 0 24px 44px -26px rgba(60, 30, 160, 0.45);
 }
 
-.ph-avatar.lime { background: #E9F9AE; border-color: #9CC21A; }
-.ph-name { font-size: 13px; font-weight: 700; line-height: 1.2; }
-.ph-sub { font-size: 10.5px; color: var(--ink-3); }
+.shot figcaption b { display: block; font-size: 15.5px; font-weight: 700; margin-bottom: 4px; }
+.shot figcaption span { display: block; font-size: 13.5px; color: var(--ink-2); line-height: 1.5; max-width: 230px; margin: 0 auto; }
 
-.ph-chip {
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--purple);
-  background: var(--purple-tint);
-  padding: 2px 8px;
-  border-radius: 100px;
-}
+.shots-wrap { max-width: 880px; margin-top: 64px; }
+.shots.three { grid-template-columns: repeat(3, 1fr); }
 
-.ph-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 12px; }
-.ph-stat { text-align: center; padding: 8px 0; background: #F7F5FD; border-radius: 10px; }
-.ph-stat b { display: block; font-size: 15px; font-weight: 800; font-variant-numeric: tabular-nums; }
-.ph-stat span { font-size: 9px; color: var(--ink-3); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
-
-.ph-match { display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; padding: 6px 0; }
-.ph-match + .ph-match { border-top: 1px solid var(--line); }
-.ph-match .w { color: #059669; font-weight: 700; }
-.ph-match .l { color: #DC2626; font-weight: 700; }
-.ph-match .sc { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink-2); }
-
-.ph-invite-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 8px; margin: 12px 0; }
-.ph-invite-meta span { font-size: 11px; font-weight: 600; color: var(--ink-2); display: flex; align-items: center; gap: 5px; }
-.ph-invite-meta i { width: 8px; height: 8px; border-radius: 50%; background: var(--purple); display: inline-block; flex: none; }
-.ph-invite-meta i.red { background: #EF4444; }
-.ph-invite-meta i.orange { background: #F37F20; }
-
-.ph-btn {
-  display: block;
-  text-align: center;
-  background: var(--purple);
-  color: #FFF;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 9px 0;
-  border-radius: 10px;
-}
-
-.ph-faded { opacity: 0.55; }
-.ph-line { height: 9px; border-radius: 4px; background: var(--line); margin-bottom: 7px; }
+.shots-note { margin: 28px 0 0; text-align: center; font-size: 12.5px; color: var(--ink-3); }
 
 /* ---------- Faixa de fatos ---------- */
 .facts { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--card); }
@@ -430,13 +388,15 @@
   .hero-text > p { margin-left: auto; margin-right: auto; }
   .store-row { justify-content: center; }
   .eyebrow { margin-left: auto; margin-right: auto; }
-  .phones { order: -1; height: 530px; }
+  .phones { order: -1; height: 590px; }
 
   .facts-grid { grid-template-columns: repeat(2, 1fr); }
   .fact:nth-child(2) { border-right: none; }
   .fact:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
 
   .tile, .tile.s7, .tile.s5 { grid-column: span 6; }
+  .shots { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; padding: 4px 24px 18px; margin: 0 -24px; }
+  .shot { flex: 0 0 220px; scroll-snap-align: center; }
   .biz-grid { grid-template-columns: 1fr; gap: 36px; }
   .steps-grid { grid-template-columns: 1fr; gap: 28px; }
   .etapa p { max-width: 520px; }
@@ -458,9 +418,9 @@
   .biz-cards { grid-template-columns: 1fr; }
   .store-btn { flex: 1 1 100%; justify-content: center; }
 
-  .phones { height: 500px; }
+  .shots { margin: 0 -18px; padding: 4px 18px 18px; }
+  .phones { height: 552px; }
   .phone.back { display: none; }
-  .phone-screen { min-height: 400px; }
   .phone { width: 252px; }
   .phone.front { left: 50%; top: 8px; transform: translateX(-50%) rotate(2deg); }
 }

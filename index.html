@@ -17,8 +17,10 @@
   <meta property="og:image" content="https://www.maistennis.com.br/assets/logo-roxo.png">
   <meta name="twitter:card" content="summary">
 
-  <link rel="icon" href="/assets/icon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/icon.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +32,7 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo" aria-label="+Tennis, página inicial"><img src="/assets/icon.png" alt=""></a>
+      <a href="/" class="brand" aria-label="+Tennis, página inicial"><img src="/assets/logo.png" alt="+Tennis" width="480" height="316"></a>
       <nav class="site-nav" aria-label="Principal">
         <a class="nav-link" href="#recursos">Recursos</a>
         <a class="nav-link" href="#categorias">Categorias</a>
@@ -68,58 +70,10 @@
           <p class="hero-note">Gratuito para começar. Tem academia, loja ou dá aula? <a href="#empresas">Veja como entrar</a>.</p>
         </div>
 
-        <!-- Ilustração do app -->
-        <div class="phones" aria-hidden="true">
-          <div class="phone back">
-            <div class="phone-screen">
-              <div class="ph-top"><span class="ph-title">Meu perfil</span><div class="ph-dot"></div></div>
-              <div class="ph-card">
-                <div class="ph-profile">
-                  <div class="ph-avatar"></div>
-                  <div>
-                    <div class="ph-name">Rafael A.</div>
-                    <span class="ph-chip">Categoria B+</span>
-                  </div>
-                </div>
-                <div class="ph-stats">
-                  <div class="ph-stat"><b>1.682</b><span>pts ELO</span></div>
-                  <div class="ph-stat"><b>27</b><span>partidas</span></div>
-                  <div class="ph-stat"><b>18</b><span>vitórias</span></div>
-                </div>
-              </div>
-              <div class="ph-card">
-                <div class="ph-title" style="margin-bottom:4px;">Últimas partidas</div>
-                <div class="ph-match"><span><span class="w">V</span> &nbsp;Bruno C.</span><span class="sc">6-3 7-5</span></div>
-                <div class="ph-match"><span><span class="l">D</span> &nbsp;Camila R.</span><span class="sc">4-6 6-7</span></div>
-                <div class="ph-match"><span><span class="w">V</span> &nbsp;Diego M.</span><span class="sc">6-2 6-4</span></div>
-              </div>
-              <div class="ph-card ph-faded"><div class="ph-line" style="width:70%"></div><div class="ph-line" style="width:45%;margin:0"></div></div>
-            </div>
-          </div>
-
-          <div class="phone front">
-            <div class="phone-screen">
-              <div class="ph-top"><span class="ph-title">Amistoso perto de você</span><div class="ph-dot"></div></div>
-              <div class="ph-card">
-                <div class="ph-profile">
-                  <div class="ph-avatar lime"></div>
-                  <div>
-                    <div class="ph-name">Camila R.</div>
-                    <span class="ph-chip">Categoria C+</span>
-                  </div>
-                </div>
-                <div class="ph-invite-meta">
-                  <span><i></i>Sáb, 18:00</span>
-                  <span><i class="orange"></i>Saibro</span>
-                  <span><i class="red"></i>Quadra 2</span>
-                  <span><i></i>2,4 km</span>
-                </div>
-                <div class="ph-btn">Aceitar convite</div>
-              </div>
-              <div class="ph-card ph-faded"><div class="ph-line" style="width:60%"></div><div class="ph-line" style="width:40%;margin:0"></div></div>
-              <div class="ph-card ph-faded"><div class="ph-line" style="width:75%"></div><div class="ph-line" style="width:35%;margin:0"></div></div>
-            </div>
-          </div>
+        <!-- Telas do app em moldura de celular -->
+        <div class="phones">
+          <div class="phone back"><img src="/assets/screens/feed.jpg" alt="Feed de partidas do +Tennis com resultados de ranking" width="589" height="1280"></div>
+          <div class="phone front"><img src="/assets/screens/perfil.jpg" alt="Perfil de jogador no +Tennis com ELO e categoria" width="589" height="1280"></div>
         </div>
       </div>
     </section>
@@ -199,6 +153,37 @@
             </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- POR DENTRO DO APP -->
+    <section class="section" id="telas">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Por dentro do app</p>
+          <h2 class="display">Feito para a rotina de quem joga</h2>
+          <p>Do menu da sua cidade ao confronto direto entre dois jogadores, algumas telas do +Tennis.</p>
+        </div>
+
+        <div class="shots">
+          <figure class="shot">
+            <div class="phone"><img src="/assets/screens/menu-jogar.jpg" alt="Menu do +Tennis com tenistas próximos para convidar" width="589" height="1280" loading="lazy"></div>
+            <figcaption><b>Tenistas próximos</b><span>Veja quem joga perto de você e convide para uma partida.</span></figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="phone"><img src="/assets/screens/professores.jpg" alt="Lista de professores de tênis em destaque" width="736" height="1600" loading="lazy"></div>
+            <figcaption><b>Professores</b><span>Encontre treinadores da sua região, com avaliações e preços.</span></figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="phone"><img src="/assets/screens/confronto.jpg" alt="Confronto direto entre dois jogadores" width="589" height="1280" loading="lazy"></div>
+            <figcaption><b>Confronto direto</b><span>O histórico entre dois jogadores, com chance de vitória.</span></figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="phone"><img src="/assets/screens/servicos.jpg" alt="Profissionais de saúde e serviços para quem joga tênis" width="589" height="1280" loading="lazy"></div>
+            <figcaption><b>Serviços</b><span>Fisioterapeutas, nutricionistas e outros profissionais do esporte.</span></figcaption>
+          </figure>
+        </div>
+        <p class="shots-note">Telas ilustrativas, com nomes e fotos fictícios.</p>
       </div>
     </section>
 
@@ -295,6 +280,23 @@
           </div>
         </div>
       </div>
+      <div class="container shots-wrap">
+        <div class="shots three">
+          <figure class="shot">
+            <div class="phone"><img src="/assets/screens/painel-professor.jpg" alt="Painel do professor com saldo, aulas agendadas e próximas aulas" width="736" height="1600" loading="lazy"></div>
+            <figcaption><b>Painel do professor</b><span>Saldo, aulas agendadas e anúncios do mês em uma tela.</span></figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="phone"><img src="/assets/screens/agenda-professor.jpg" alt="Agenda de aulas do professor por dia" width="736" height="1600" loading="lazy"></div>
+            <figcaption><b>Agenda de aulas</b><span>Aulas individuais ou em grupo, com os alunos de cada horário.</span></figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="phone"><img src="/assets/screens/painel-academia.jpg" alt="Painel da academia com agenda, torneios, quadras, alunos e rankings" width="736" height="1600" loading="lazy"></div>
+            <figcaption><b>Painel da academia</b><span>Agenda, torneios, quadras, alunos, rankings e clínicas.</span></figcaption>
+          </figure>
+        </div>
+        <p class="shots-note">Telas ilustrativas, com nomes e fotos fictícios.</p>
+      </div>
     </section>
 
     <!-- CHAMADA FINAL -->
@@ -322,7 +324,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="/" class="logo" aria-label="+Tennis, página inicial"><img src="/assets/icon.png" alt=""></a>
+          <a href="/" class="brand" aria-label="+Tennis, página inicial"><img src="/assets/logo.png" alt="+Tennis" width="480" height="316"></a>
           <p>O app que junta, na mesma cidade, quem joga tênis e quem vive de tênis.</p>
         </div>
         <div class="footer-col">
