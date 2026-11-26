@@ -248,3 +248,6 @@ section.cat-band{margin-inline:0;padding-inline:clamp(20px,4vw,48px);padding-blo
 @media (max-width:700px){section.cat-band{padding-block:36px;border-radius:22px}}
 
 section.cat-band{max-width:1120px;margin-inline:auto;box-sizing:border-box}
+
+/* degraus com altura suficiente para a letra e a faixa de pontos */
+.d1{height:90px}.d2{height:108px}.d3{height:126px}.d4{height:144px}.d5{height:162px}.d6{height:180px}.d7{height:204px}
