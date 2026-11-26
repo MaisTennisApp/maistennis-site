@@ -242,3 +242,7 @@ footer{border-top:1px solid var(--line);padding-block:30px 40px;margin-inline:ca
 .cat-nota{margin:0;padding:14px 0 18px;text-align:center;font-size:13px;color:#C4B5FD}
 @media (max-width:700px){.cat-card .deg span{font-size:13px;white-space:nowrap}.cat-nota{padding:14px 0 0;text-align:left}}
 @media (max-width:700px){.cat-card .d1{width:58%}.cat-card .d2{width:64%}.cat-card .d3{width:70%}.cat-card .d4{width:76%}.cat-card .d5{width:82%}.cat-card .d6{width:90%}.cat-card .d7{width:100%}}
+
+/* categorias: bloco arredondado dentro das margens, como as demais seções */
+section.cat-band{margin-inline:0;padding-inline:clamp(20px,4vw,48px);padding-block:56px;border-radius:28px;margin-block:24px}
+@media (max-width:700px){section.cat-band{padding-block:36px;border-radius:22px}}
