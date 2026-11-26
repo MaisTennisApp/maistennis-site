@@ -39,11 +39,11 @@ section{padding-block:72px}
 .hero h1 em{font-style:italic;color:var(--purple)}
 .hero .lead{margin-top:20px}
 .stores{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 20px}
-.store{display:inline-flex;align-items:center;gap:12px;padding:11px 20px 11px 16px;border-radius:14px;background:var(--ink);color:#fff;text-decoration:none;transition:transform .15s}
+.store{display:inline-flex;align-items:center;gap:14px;padding:14px 26px 14px 20px;border-radius:16px;background:var(--ink);color:#fff;text-decoration:none;transition:transform .15s}
 .store:hover{transform:translateY(-2px)}
 .store.alt{background:var(--purple)}
-.store small{display:block;font-size:11px;opacity:.75;line-height:1.2}
-.store strong{display:block;font-size:16px;font-weight:600;line-height:1.25}
+.store small{display:block;font-size:12px;opacity:.78;line-height:1.2}
+.store strong{display:block;font-size:18px;font-weight:600;line-height:1.25}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{font-size:13.5px;font-weight:600;padding:7px 14px;border-radius:99px;background:var(--tint);color:var(--purple-deep);border:1px solid var(--line)}
 .chip.on{background:var(--amber);border-color:var(--amber);color:var(--amber-ink)}
@@ -216,3 +216,11 @@ footer{border-top:1px solid var(--line);padding-block:30px 40px;margin-inline:ca
 .painel-link{margin:18px 0 0;font-size:14.5px;color:var(--ink-2)}
 .painel-link a{color:var(--purple);font-weight:600}
 @media (max-width:980px){.emp.a7,.emp.a5,.emp.a4{grid-column:span 12}.comecar{grid-template-columns:minmax(0,1fr)}.passo{border-right:0;border-bottom:1px solid var(--line)}.passo:last-child{border-bottom:0}}
+
+.dl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,260px));justify-content:center;gap:34px 48px;margin-top:34px}
+.dl{display:flex;flex-direction:column;align-items:center;gap:20px;min-width:0}
+.store.grande{width:100%;justify-content:center;padding:18px 24px;border-radius:18px}
+.store.grande strong{font-size:21px}
+.store.grande small{font-size:13px}
+.dl .qr{margin:0}
+@media (max-width:620px){.dl-grid{grid-template-columns:minmax(0,320px)}.store.grande{padding:16px 22px}}
