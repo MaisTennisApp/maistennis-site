@@ -246,3 +246,5 @@ footer{border-top:1px solid var(--line);padding-block:30px 40px;margin-inline:ca
 /* categorias: bloco arredondado dentro das margens, como as demais seções */
 section.cat-band{margin-inline:0;padding-inline:clamp(20px,4vw,48px);padding-block:56px;border-radius:28px;margin-block:24px}
 @media (max-width:700px){section.cat-band{padding-block:36px;border-radius:22px}}
+
+section.cat-band{max-width:1120px;margin-inline:auto;box-sizing:border-box}
