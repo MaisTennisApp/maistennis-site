@@ -238,3 +238,7 @@ footer{border-top:1px solid var(--line);padding-block:30px 40px;margin-inline:ca
 
 /* faixas coloridas ocupam a largura toda da tela, sem a borda branca do corpo da página */
 .cat-band,.biz,#novidades{margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+
+.cat-nota{margin:0;padding:14px 0 18px;text-align:center;font-size:13px;color:#C4B5FD}
+@media (max-width:700px){.cat-card .deg span{font-size:13px;white-space:nowrap}.cat-nota{padding:14px 0 0;text-align:left}}
+@media (max-width:700px){.cat-card .d1{width:58%}.cat-card .d2{width:64%}.cat-card .d3{width:70%}.cat-card .d4{width:76%}.cat-card .d5{width:82%}.cat-card .d6{width:90%}.cat-card .d7{width:100%}}
