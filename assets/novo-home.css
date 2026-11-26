@@ -224,3 +224,14 @@ footer{border-top:1px solid var(--line);padding-block:30px 40px;margin-inline:ca
 .store.grande small{font-size:13px}
 .dl .qr{margin:0}
 @media (max-width:620px){.dl-grid{grid-template-columns:minmax(0,320px)}.store.grande{padding:16px 22px}}
+
+.cat-card{margin-top:36px;padding:28px 28px 0;border:1px solid rgba(255,255,255,.2);border-radius:20px;background:rgba(255,255,255,.06);overflow:hidden}
+.cat-card .escada{margin-top:0}
+@media (max-width:700px){
+  .cat-card{padding:18px;border-radius:18px}
+  .cat-card .escada{grid-template-columns:minmax(0,1fr);gap:8px;align-items:stretch}
+  .cat-card .deg{height:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;padding:10px 14px;border:1px solid rgba(255,255,255,.18);border-radius:12px}
+  .cat-card .deg b{display:inline;font-size:22px;line-height:1}
+  .cat-card .deg span{font-size:12.5px}
+  .cat-card .d1{width:38%}.cat-card .d2{width:46%}.cat-card .d3{width:55%}.cat-card .d4{width:64%}.cat-card .d5{width:74%}.cat-card .d6{width:86%}.cat-card .d7{width:100%}
+}
